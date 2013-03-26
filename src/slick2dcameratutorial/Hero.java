@@ -36,7 +36,7 @@ public class Hero {
             trans.x = 0.5f * delta;
         }
 
-        if (input.isKeyDown(Input.KEY_LEFT) || input.isKeyDown(Input.KEY_S)) {
+        if (input.isKeyDown(Input.KEY_LEFT) || input.isKeyDown(Input.KEY_A)) {
             trans.x = -0.5f * delta;
         }       
         

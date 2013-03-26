@@ -6,8 +6,8 @@
  <tileset firstgid="257" name="tileset2.php" tilewidth="32" tileheight="32">
   <image source="images/tileset2.php.png" width="960" height="960"/>
  </tileset>
- <tileset firstgid="1157" name=".php" tilewidth="32" tileheight="32">
-  <image source="images/.php.png" width="2239" height="2235"/>
+ <tileset firstgid="1157" name="php" tilewidth="32" tileheight="32">
+  <image source="images/php.png" width="2239" height="2235"/>
  </tileset>
  <layer name="underwaterstuff" width="200" height="200">
   <data encoding="base64" compression="zlib">
