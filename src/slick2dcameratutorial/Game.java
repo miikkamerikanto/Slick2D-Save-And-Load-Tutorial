@@ -1,5 +1,5 @@
 package slick2dcameratutorial;
- 
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -8,23 +8,20 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
- 
+
 public class Game extends BasicGame {
- 
-	//Constants
-	static int WIDTH = 1024;
+
+        static int WIDTH = 1024;
 	static int HEIGHT = 760;
- 
 	static boolean fullscreen = false;
 	static boolean showFPS = true;
-	static String title = "Advanced Camera tutorial";
+	static String title = "Slick2D Camera Tutorial";
 	static int fpslimit = 60;
- 
-	//Variables
-	TiledMap map; //The file that contain the world we are
-	Hero player; //The moving entity we will follow
-	Camera camera; //The camera we are going to use
+	TiledMap map;
+	Hero player;
+	Camera camera;
 	int mapHeight, mapWidth;
+        int tileHeight, tileWidth;
  
 	public Game(String title) {
 		super(title);
@@ -32,22 +29,20 @@ public class Game extends BasicGame {
  
 	public void init(GameContainer gc) throws SlickException {
 		map = new TiledMap("tiledmaps/map.tmx");
-		mapWidth = map.getWidth() * map.getTileWidth(); // Map size = Tile Size * number of Tiles
+		mapWidth = map.getWidth() * map.getTileWidth();
 		mapHeight = map.getHeight() * map.getTileHeight();
- 
-		player = new Hero(50, 50, 32, 32, new Image("images/hero.png"));
+		tileHeight = map.getTileHeight();
+                tileWidth = map.getTileWidth();
+                player = new Hero(tileWidth*4, tileHeight*4, 32, 32, new Image("images/hero.png"));
 		camera = new Camera(map, mapWidth, mapHeight);
 	}
  
 	public void update(GameContainer gc, int delta) throws SlickException {
- 
-		player.update(gc, mapWidth, mapHeight, delta);
+		player.update(gc, mapWidth, mapHeight, delta, tileWidth, tileHeight);
 	}
  
 	public void render(GameContainer gc, Graphics g) throws SlickException {
- 
 		camera.translate(g, player);
- 
 		map.render(0, 0);
 		player.render();
 	}
