@@ -16,7 +16,7 @@ public class Game extends BasicGame {
     static final int HEIGHT = 760;
     static boolean fullscreen = false;
     static boolean showFPS = true;
-    static String title = "Slick2D Camera Tutorial";
+    static String title = "Slick2D Save (S) And Load (L) Example";
     static int fpslimit = 60;
     TiledMap map;
     Hero player;
