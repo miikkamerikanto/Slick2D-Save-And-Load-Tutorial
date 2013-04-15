@@ -13,15 +13,17 @@ import org.newdawn.slick.geom.Vector2f;
  */
 public class FileIO {
 
-    private Vector2f coordinates = new Vector2f(128, 128);
+    private Vector2f coordinates = new Vector2f(0, 0);
 
+    /**
+     *  Empty Constructor.
+     */
     public FileIO() {
     }
 
     /**
-     * Loads the saved game.
-     *
-     * @return Hero's coordinates as a float array (x, y).
+     * Loads the saved game from txt file (game.sav).
+     * @return Hero's coordinates.
      */
     public Vector2f loadSave() {
         try {
@@ -38,10 +40,8 @@ public class FileIO {
     }
 
     /**
-     * Saves the game.
-     *
-     * @param x Hero's current x coordinate.
-     * @param y Hero's current y coordinate.
+     * Saves the game in a txt file (game.sav).
+     * @param vector Hero's current coordinates.
      */
     public void save(Vector2f vector) {
         try {
